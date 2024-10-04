@@ -27,9 +27,11 @@ class CurrencyConverterMaterialPage extends StatefulWidget {
 }
 
 class _CurrencyConverterMaterialPageState
-    extends State<CurrencyConverterMaterialPage> {
+    extends State<CurrencyConverterMaterialPage>
+    with SingleTickerProviderStateMixin {
   final CurrencyConverterViewModel viewModel = CurrencyConverterViewModel();
   TextEditingController textEditingController = TextEditingController();
+  double _scaleFactor = 1.0; // To control the scale of the button
 
   @override
   Widget build(BuildContext context) {
@@ -97,26 +99,45 @@ class _CurrencyConverterMaterialPageState
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // Button for conversion
-                  ElevatedButton(
-                    onPressed: () {
+                  // Animated Convert button
+                  GestureDetector(
+                    onTapDown: (_) {
+                      setState(() {
+                        _scaleFactor = 0.9; // Scale down
+                      });
+                    },
+                    onTapUp: (_) {
+                      setState(() {
+                        _scaleFactor = 1.0; // Scale back up
+                      });
+                      // Trigger conversion after scaling back
                       String input = textEditingController.text.trim();
                       setState(() {
                         viewModel.convert(
                             input); // Call the convert method from ViewModel
                       });
                     },
-                    style: ElevatedButton.styleFrom(
-                      elevation: 5,
-                      backgroundColor: const Color.fromARGB(255, 52, 45, 45),
-                      foregroundColor: Colors.white,
-                      minimumSize: const Size(double.infinity, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                    onTapCancel: () {
+                      setState(() {
+                        _scaleFactor = 1.0; // Scale back up if tap is cancelled
+                      });
+                    },
+                    child: AnimatedScale(
+                      scale: _scaleFactor,
+                      duration: const Duration(milliseconds: 100),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 30),
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 90, 72, 102),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          "Convert",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
                       ),
                     ),
-                    child:
-                        const Text("Convert", style: TextStyle(fontSize: 18)),
                   ),
                 ],
               ),
