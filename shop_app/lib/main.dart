@@ -10,9 +10,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Shopping App',
-      home: HomePage(),
+    return MaterialApp(
+      title: 'Guitar Collections',
+      theme: ThemeData(
+        fontFamily: 'Lato',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 150, 0, 102),
+          primary: const Color.fromARGB(255, 150, 0, 102),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+            hintStyle: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 16, color: Colors.grey),
+            prefixIconColor: Colors.grey),
+      ),
+      home: const HomePage(),
     );
   }
 }
