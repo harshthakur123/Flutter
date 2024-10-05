@@ -119,7 +119,7 @@ class _CurrencyConverterMaterialPageState
                     },
                     onTapCancel: () {
                       setState(() {
-                        _scaleFactor = 1.0; // Scale back up if tap is cancelled
+                        _scaleFactor = 1.1; // Scale back up if tap is cancelled
                       });
                     },
                     child: AnimatedScale(
