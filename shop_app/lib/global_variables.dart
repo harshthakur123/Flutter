@@ -5,7 +5,7 @@ final products = [
     'price': 19000.0,
     'imageUrl': 'assets/images/y.png',
     'company': 'yamaha',
-    'sizes': [38, 40, 42],
+    'sizes': [36, 38, 40, 42],
   },
   {
     'id': '1',
@@ -13,7 +13,7 @@ final products = [
     'price': 21000.0,
     'imageUrl': 'assets/images/f.png',
     'company': 'yamaha',
-    'sizes': [38, 40, 42],
+    'sizes': [36, 38, 40, 42],
   },
   {
     'id': '2',
@@ -21,7 +21,7 @@ final products = [
     'price': 48000.0,
     'imageUrl': 'assets/images/g.png',
     'company': 'yamaha',
-    'sizes': [38, 40, 42],
+    'sizes': [36, 38, 40, 42],
   },
   {
     'id': '3',
@@ -29,7 +29,7 @@ final products = [
     'price': 89000.0,
     'imageUrl': 'assets/images/b.png',
     'company': 'yamaha',
-    'sizes': [38, 40, 42],
+    'sizes': [36, 38, 40, 42],
   }
 ];
 
@@ -40,6 +40,6 @@ final cart = [
     'price': 89000.0,
     'imageUrl': 'assets/images/b.png',
     'company': 'yamaha',
-    'sizes': [38, 40, 42],
+    'sizes': [36, 38, 40, 42],
   }
 ];
