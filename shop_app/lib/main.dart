@@ -15,13 +15,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Lato',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 150, 0, 102),
-          primary: const Color.fromARGB(255, 150, 0, 102),
+          seedColor: const Color.fromARGB(255, 186, 124, 37),
+          primary: const Color.fromARGB(255, 186, 124, 37),
         ),
         inputDecorationTheme: const InputDecorationTheme(
             hintStyle: TextStyle(
                 fontWeight: FontWeight.bold, fontSize: 16, color: Colors.grey),
             prefixIconColor: Colors.grey),
+        textTheme: const TextTheme(
+            titleMedium: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+            bodySmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
       ),
       home: const HomePage(),
     );
