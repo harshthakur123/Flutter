@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/global_variables.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,7 +9,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> filters = const ["All", "Yamaha", "Gibson", "BC Rich"];
+  final List<String> filters = const [
+    "All",
+    "Yamaha",
+    "Gibson",
+    "BC Rich",
+    'Fender'
+  ];
   late String selectedFilter = filters[0];
 
   @override
@@ -95,7 +102,12 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-            )
+            ),
+            ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                })
           ],
         ),
       ),
