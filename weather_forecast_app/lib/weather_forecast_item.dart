@@ -6,7 +6,7 @@ class HourlyForecastItem extends StatelessWidget {
   final String temprature;
   final IconData icon;
 
-  HourlyForecastItem({
+  const HourlyForecastItem({
     super.key,
     required this.time,
     required this.temprature,
