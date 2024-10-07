@@ -50,10 +50,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   height: 50,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: (widget.products['sizes'] as List<int>).length,
+                    itemCount: (widget.products['size'] as List<int>).length,
                     itemBuilder: (context, index) {
                       final size =
-                          (widget.products['sizes'] as List<int>)[index];
+                          (widget.products['size'] as List<int>)[index];
 
                       return GestureDetector(
                         onTap: () {
