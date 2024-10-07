@@ -32,14 +32,3 @@ final products = [
     'size': [36, 38, 40, 42],
   }
 ];
-
-final cart = [
-  {
-    'id': '3',
-    'title': 'BC Rich Guiar',
-    'price': 89000.0,
-    'imageUrl': 'assets/images/b.png',
-    'company': 'yamaha',
-    'size': 36,
-  }
-];
