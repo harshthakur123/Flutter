@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/global_variables.dart';
-import 'package:shop_app/product_card.dart';
-import 'package:shop_app/product_detail_page.dart';
+import 'package:shop_app/widgets/product_card.dart';
+import 'package:shop_app/pages/product_detail_page.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({super.key});
@@ -38,7 +38,7 @@ class _ProductListState extends State<ProductList> {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Text("Guitar\nCollections",
                     style: Theme.of(context).textTheme.titleLarge),
               ),
