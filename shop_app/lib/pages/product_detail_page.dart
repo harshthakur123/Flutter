@@ -80,7 +80,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             child: Container(
               height: 250,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 193, 200, 200),
+                color: const Color.fromARGB(255, 222, 244, 241),
                 borderRadius: BorderRadius.circular(40),
               ),
               child: Column(
@@ -125,7 +125,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       onPressed: onTap,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).colorScheme.primary,
-                        fixedSize: const Size(double.infinity, 50),
+                        fixedSize: const Size(400, 50),
                       ),
                       child: const Text(
                         "Add to Cart",
