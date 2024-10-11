@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:shop_app/global_variables.dart';
 import 'package:shop_app/widgets/product_card.dart';
 import 'package:shop_app/pages/product_detail_page.dart';
@@ -24,7 +23,7 @@ class _ProductListState extends State<ProductList> {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.sizeOf(context);
+    final size = MediaQuery.of(context).size.width;
 
     const border = OutlineInputBorder(
       borderSide: BorderSide(
@@ -125,7 +124,7 @@ class _ProductListState extends State<ProductList> {
                           price: product['price'] as double,
                           image: product['imageUrl'] as String,
                           backgroundColor: index.isEven
-                              ? const Color.fromARGB(255, 235, 221, 187)
+                              ? const Color.fromARGB(255, 134, 243, 255)
                               : Colors.white,
                         ),
                       );

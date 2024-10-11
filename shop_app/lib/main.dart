@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Lato',
           colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 141, 206, 224),
-            primary: const Color.fromARGB(255, 141, 206, 224),
+            seedColor: const Color.fromARGB(255, 127, 201, 222),
+            primary: const Color.fromARGB(255, 97, 190, 216),
           ),
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
               hintStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Colors.grey),
+                  color: Color.fromARGB(255, 158, 158, 158)),
               prefixIconColor: Colors.grey),
           textTheme: const TextTheme(
             titleLarge: TextStyle(

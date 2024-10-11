@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/pages/cart_page.dart';
+
 import 'package:shop_app/providers/cartProvider.dart';
 
 class ProductDetailPage extends StatefulWidget {
@@ -27,26 +29,62 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         },
       );
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            "Product added successfully!!!",
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 140, 254, 0)),
+        SnackBar(
+          content: const Row(
+            children: [
+              Icon(Icons.check_circle, color: Colors.greenAccent),
+              SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  "Product added successfully!!!",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 140, 254, 0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: Colors.black87,
+          behavior: SnackBarBehavior.floating,
+          duration: const Duration(seconds: 3),
+          action: SnackBarAction(
+            label: 'View Cart',
+            textColor: Colors.greenAccent,
+            onPressed: () {
+              print("pressed");
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const CartPage(),
+                ),
+              );
+            },
           ),
         ),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text(
-            "Please select a size!!!",
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 254, 17, 0)),
+          content: Row(
+            children: [
+              Icon(Icons.error, color: Colors.redAccent),
+              SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  "Please select a size!!!",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 254, 17, 0),
+                  ),
+                ),
+              ),
+            ],
           ),
+          backgroundColor: Colors.black87,
+          behavior: SnackBarBehavior.floating,
+          duration: Duration(seconds: 3),
         ),
       );
     }
